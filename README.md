@@ -5,6 +5,7 @@ CRISPR/Cas9 Target Site Design and Knock-out Prediction for the Human TP53 Tumor
 🧬 Project Overview
 
 This repository contains the results of a CRISPR/Cas9 target site search conducted using the CHOPCHOP tool. The primary objective was to identify highly specific and efficient single-guide RNA (sgRNA) sequences for performing a gene knock-out experiment targeting the human tumor suppressor gene, TP53 (Homo sapiens, genome assembly GRCh38).
+
 🎯 Key Findings: Optimal sgRNA Target Site
 
 The search identified several high-quality gRNAs based on predicted specificity and efficiency.
@@ -41,6 +42,8 @@ Pair,Left Primer (5' to 3'),Right Primer (5' to 3'),Product Size
 4 (Recommended),CTCAACAAGATGTTTTGCCAAC,GCCAGACCTAAGAGCAATCAGT,260 bp
 
 📂 File Structure
+
 File Name,Content
 TP53_gRNA_Screen_Summary.html,"The comprehensive, ranked list of all identified sgRNA candidates, including core specificity metrics and efficiency scores."
+
 TP53_Rank1_gRNA_Detail_Analysis.html,"The in-depth breakdown for the top-ranked sgRNA, containing gene visualization, predicted NHEJ repair statistics, and validation primer details."
