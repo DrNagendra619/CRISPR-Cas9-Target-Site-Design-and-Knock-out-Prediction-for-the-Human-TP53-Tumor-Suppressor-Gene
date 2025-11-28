@@ -39,6 +39,7 @@ Product Size Range,259 bp – 284 bp,Optimal sizes for standard validation assay
 The tool designed highly specific PCR primer pairs (0 predicted off-targets for all pairs) for validating the editing success at the Rank 1 target site.
 Pair,Left Primer (5' to 3'),Right Primer (5' to 3'),Product Size
 4 (Recommended),CTCAACAAGATGTTTTGCCAAC,GCCAGACCTAAGAGCAATCAGT,260 bp
+
 📂 File Structure
 File Name,Content
 TP53_gRNA_Screen_Summary.html,"The comprehensive, ranked list of all identified sgRNA candidates, including core specificity metrics and efficiency scores."
