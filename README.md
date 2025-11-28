@@ -1,27 +1,37 @@
 # CRISPR-Cas9-Target-Site-Design-and-Knock-out-Prediction-for-the-Human-TP53-Tumor-Suppressor-Gene
 CRISPR/Cas9 Target Site Design and Knock-out Prediction for the Human TP53 Tumor Suppressor Gene
 # CRISPR/Cas9 Target Site Design and Knock-out Prediction for the Human TP53 Tumor Suppressor Gene
+# CRISPR/Cas9 Target Site Design and Knock-out Prediction for the Human TP53 Tumor Suppressor Gene
 
 ### 🧬 Project Overview
 
-This repository contains the results of a CRISPR/Cas9 target site search conducted using the **CHOPCHOP** tool. The primary objective was to identify highly specific and efficient **single-guide RNA (sgRNA)** sequences for performing a **gene knock-out** experiment targeting the human tumor suppressor gene, **TP53** (*Homo sapiens*, genome assembly GRCh38).
+This repository documents the target site selection process for a CRISPR/Cas9-mediated **gene knock-out** of the human tumor suppressor gene, **TP53** (*Homo sapiens*, genome assembly GRCh38). Results were generated using the CHOPCHOP design tool.
+
+***
+
+### 🔬 Genomic Context (UCSC Genome Browser Analysis)
+
+The analysis was focused on the gene locus on chromosome 17.
+
+* **Genomic Coordinates:** The analysis window covers **chr17:7,668,401-7,687,550** (approximately 19.15 kb).
+* **Transcript Structure:** The *TP53* gene is complex, transcribed on the **minus strand**, and possesses **multiple known splice variants** (isoforms, e.g., NM\_000546 and NM\_001126112), validating the decision to target a common **coding exon** to ensure comprehensive knock-out.
 
 ***
 
 ### 🎯 Key Findings: Optimal sgRNA Target Site
 
-The search identified several high-quality sgRNAs based on predicted specificity and efficiency.
+The search identified the following high-quality single-guide RNA (sgRNA) candidates.
 
 | Rank | Target Sequence (5' to 3') | PAM | Genomic Location | Strand | Efficiency Score |
 | :---: | :--- | :--- | :--- | :---: | :---: |
 | **1** | **CGCTATCTGAGCAGCGCTCA** | **TGG** | chr17:7675056 | + | 43.15% |
 | **6** | **GAGCGCTGCTCAGATAGCGA** | **TGG** | chr17:7675052 | - | **63.35%** |
 
-*Note: Rank 6 exhibits the highest predicted on-target cleavage efficiency at 63.35%.*
+*Note: Rank 6 exhibits the highest predicted on-target cleavage efficiency, while Rank 1 offers unmatched specificity.*
 
 #### **Specificity (Off-Target Analysis for Rank 1)**
 
-The top-ranked sgRNA sequence exhibits outstanding specificity, with:
+The Rank 1 sgRNA sequence is highly specific, showing **zero** predicted off-target matches with up to three mismatches (MM) found in the reference genome.
 
 | Off-Target Mismatches (MM) | Count |
 | :---: | :---: |
@@ -30,24 +40,21 @@ The top-ranked sgRNA sequence exhibits outstanding specificity, with:
 | **2 Mismatches (MM2)** | **0** |
 | **3 Mismatches (MM3)** | **0** |
 
-This indicates an extremely low risk of unintended edits at other genomic locations. The target region is located within a **coding exon**, ensuring disruption of the protein product.
-
 #### **Predicted Knock-out Outcome (Repair Profile for Rank 1)**
 
-The analysis of the repair profile (Shen et al. 2018 predictions) for the Rank 1 site suggests a high probability of successful gene inactivation through Non-Homologous End-Joining (NHEJ).
+The predicted repair profile (Shen et al. 2018 predictions) for the Rank 1 site is favorable for generating a functional knock-out via NHEJ.
 
 | Metric | Predicted Value | Interpretation |
 | :--- | :--- | :--- |
-| **Frameshift Frequency** | **42.76%** | The predicted probability that the repair process introduces an insertion/deletion (indel) that shifts the reading frame, leading to premature termination and protein knock-out. |
-| **Highest Deletion Frequency**| **44.83%** | The single most frequent repair outcome. |
-| **Microhomology Deletion** | **76.56%** | High percentage suggesting predictable deletion patterns. |
-| **Product Size Range** | 259 bp – 284 bp | Optimal sizes for standard validation assays. |
+| **Frameshift Frequency** | **42.76%** | The predicted probability of achieving a successful gene-inactivating frame-shift mutation. |
+| **Highest Deletion Frequency**| **44.83%** | The single most frequent predicted repair outcome, which simplifies clone screening. |
+| **Microhomology Deletion** | **76.56%** | High frequency indicating predictable deletion patterns. |
 
 ***
 
 ### 🔬 Validation Strategy: PCR Primers
 
-The tool successfully designed highly specific PCR primer pairs (0 predicted off-targets for all pairs) for validating the editing success at the Rank 1 target site.
+The tool designed highly specific PCR primer pairs (0 predicted off-targets for all pairs) for validating the editing success at the Rank 1 target site.
 
 | Pair | Left Primer (5' to 3') | Right Primer (5' to 3') | Product Size |
 | :---: | :--- | :--- | :---: |
